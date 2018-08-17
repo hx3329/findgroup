@@ -15,7 +15,8 @@ okta – Allows us to store and authenticate users without having to create our 
 Express – Allows us to serve our HTML and JavaScript files.
 Webpack – Allows us to pack all of our JavaScript files into one bundle.
 Babel – Allows us to transpile our ES6 and JSX into ES5.
-Material UI – Because we want pretty UI.
+Bootstrap– Because we want pretty UI.
+react-bootstrap
 
 
 
