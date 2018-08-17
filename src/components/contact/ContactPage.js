@@ -3,6 +3,7 @@ import {
     Route,
     Link,
 } from 'react-router-dom';
+
 const ContactPage = ({ match }) => {
     return (
         <div className="container">

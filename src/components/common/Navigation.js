@@ -1,38 +1,43 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-//import PropTypes from 'prop-types';
-//import { Button } from 'react-bootstrap';
+import React, {Component} from 'react';
+import { Navbar,NavItem,NavDropdown,MenuItem,Nav } from "react-bootstrap";
+import {Link} from "react-router-dom";
 
- class Navigation extends React.Component{
-    // static contextTypes = {
-    //     user: React.PropTypes.object
-    // };
+class Navigation extends Component {
     render(){
-        return (
-            <div className="navbar navbar-inverse navbar-sticky navbar-static-top">
-                <div className="container">
-                    <div className="navbar-header">
-                        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span className="sr-only">Toggle navigation</span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                        </button>
-                        <Link to="/" className="navbar-brand">findgroup</Link>
-                    </div>
-                    <div className="navbar-collapse collapse">
-                        <ul className="nav navbar-nav navbar-right smooth-scroll">
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="about">About</Link></li>
-                            <li><Link to="contact">Contact</Link></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        );
+        return(
+            //use react-bootstrap Navbar with collapse
+            <Navbar  inverse collapseOnSelect>
+                <Navbar.Header>
+                    <Navbar.Brand>
+                        <a href="/">findgroup</a>
+                    </Navbar.Brand>
+                    <Navbar.Toggle />
+                </Navbar.Header>
+                <Navbar.Collapse>
+                    <Nav>
+                        {/*use componentClass and href to fix the style error from combining bootstrap and router*/}
+                        <NavItem eventKey={1} componentClass={Link} href="/" to="/">Home</NavItem>
+                        <NavItem eventKey={2} componentClass={Link} href="/about" to="about">About</NavItem>
+                        <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+                            <MenuItem eventKey={3.1}>Action</MenuItem>
+                            <MenuItem eventKey={3.2}>Another action</MenuItem>
+                            <MenuItem eventKey={3.3}>Something else here</MenuItem>
+                            <MenuItem divider />
+                            <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav pullRight>
+                        <NavItem eventKey={1} componentClass={Link} href="/contact" to="contact">Contact</NavItem>
+                        <NavItem eventKey={2} href="#">
+                            Link Right
+                        </NavItem>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+        )
     }
 }
-export default Navigation;
 
+export default Navigation;
 
 
