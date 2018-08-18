@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^1.5.0",
+    "@okta/okta-react": "^1.0.3",
+    "@okta/okta-signin-widget": "^2.10.0",
+    "ajv": "^6.5.3",
     "react": "^16.4.2",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.2",

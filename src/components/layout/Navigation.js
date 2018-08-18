@@ -19,7 +19,7 @@ class Navigation extends Component {
                         <NavItem eventKey={1} componentClass={Link} href="/" to="/">Home</NavItem>
                         <NavItem eventKey={2} componentClass={Link} href="/about" to="about">About</NavItem>
                         <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                            <MenuItem eventKey={3.1}>Action</MenuItem>
+                            <MenuItem eventKey={3.1}>logindemo</MenuItem>
                             <MenuItem eventKey={3.2}>Another action</MenuItem>
                             <MenuItem eventKey={3.3}>Something else here</MenuItem>
                             <MenuItem divider />
@@ -28,8 +28,8 @@ class Navigation extends Component {
                     </Nav>
                     <Nav pullRight>
                         <NavItem eventKey={1} componentClass={Link} href="/contact" to="contact">Contact</NavItem>
-                        <NavItem eventKey={2} href="#">
-                            Link Right
+                        <NavItem eventKey={2} componentClass={Link} href="/login" to="login">
+                            Login
                         </NavItem>
                     </Nav>
                 </Navbar.Collapse>
