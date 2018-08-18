@@ -8,13 +8,7 @@ class SignInWidget extends Component {
     componentDidMount() {
         const el = ReactDOM.findDOMNode(this);
         this.widget = new OktaSignIn({
-            baseUrl: 'https://dev-315171.oktapreview.com',
-            clientId: '0oafy5doukXv4vJmd0h7',
-            redirectUri: 'http://localhost:3000',
-            authParams: {
-                issuer: 'default',
-                responseType: 'id_token'
-            }
+            baseUrl: this.props.baseUrl,
         });
         this.widget.renderEl({el}, this.props.onSuccess, this.props.onError);
     }

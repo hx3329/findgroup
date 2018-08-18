@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {  Route, Switch, BrowserRouter as Router} from 'react-router-dom';
-import {Security,ImplicitCallback} from "@okta/okta-react";
+import {Security,SecureRoute,ImplicitCallback} from "@okta/okta-react";
 
 
 import Layout from './components/layout/Layout';
@@ -9,10 +9,9 @@ import AboutPage from './components/pages/AboutPage';
 import ContactPage from './components/pages/ContactPage';
 import LoginPage from './components/auth/LoginPage';
 
-const config = {
-    issuer: 'https://dev-315171.oktapreview.com/oauth2/default',
-    redirect_uri: window.location.origin + '/implicit/callback',
-    client_id: '0oafy5doukXv4vJmd0h7'
+
+function onAuthRequired({ history}) {
+    history.push("/login");
 }
 
 class App extends Component {
@@ -21,9 +20,11 @@ class App extends Component {
         return (
            // use the router to identify the url
            <Router>
-               <Security issuer={config.issuer}
-                         client_id={config.client_id}
-                         redirect_uri={config.redirect_uri}
+               <Security
+                   issuer="https://dev-315171.oktapreview.com/oauth2/default"
+                   client_id="0oafy5doukXv4vJmd0h7"
+                   redirect_uri={window.location.origin + '/implicit/callback'}
+                   onAuthRequired={onAuthRequired}
                >
                    <div className="App">
                      <div className="layout">
@@ -33,12 +34,18 @@ class App extends Component {
                        <div className="container">
                            <Switch>
                                {/*use exact to identify homepage without /home*/}
-                               <Route path="/" exact={true} component={HomePage} />
+                               <Route path="/" exact={true} component={HomePage}/>
+                               {/*<Route path="/login" render={()=><LoginPage*/}
+                                      {/*baseUrl='https://dev-315171.oktapreview.com/oauth2/default'/>} />*/}
+                               <Route
+                                   path="/login"
+                                   render={() => (
+                                       <LoginPage baseUrl="https://dev-315171.oktapreview.com" />
+                                   )}
+                               />
                                <Route path='/implicit/callback' component={ImplicitCallback}/>
                                <Route path="/about" component={AboutPage}/>
-                               <Route path="/contact" component={ContactPage}/>
-                               <Route path="/login" component={LoginPage}/>
-
+                               <SecureRoute path="/contact" component={ContactPage}/>
                            </Switch>
                        </div>
                    </div>
