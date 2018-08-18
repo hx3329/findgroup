@@ -7,17 +7,17 @@ okta React SDK for user features.
 
 To give you a good overview of what we’ll be using:
 
--React – Allows us to compose simple yet powerful UIs.
--ReactRouter – Organizes the URL navigation in our React application.
--ES6 – The next version of JavaScript. Allows us to write real JavaScript classes.
--JSX – Allows us to place HTML in JavaScript without concatenating strings.
--Express – Allows us to serve our HTML and JavaScript files.
--Webpack – Allows us to pack all of our JavaScript files into one bundle.
--Babel – Allows us to transpile our ES6 and JSX into ES5.
--Bootstrap– Because we want pretty UI.
--react-bootstrap-more powerful to help us using bootstrap in react
+- React – Allows us to compose simple yet powerful UIs.
+- ReactRouter – Organizes the URL navigation in our React application.
+- ES6 – The next version of JavaScript. Allows us to write real JavaScript classes.
+- JSX – Allows us to place HTML in JavaScript without concatenating strings.
+- Express – Allows us to serve our HTML and JavaScript files.
+- Webpack – Allows us to pack all of our JavaScript files into one bundle.
+- Babel – Allows us to transpile our ES6 and JSX into ES5.
+- Bootstrap– Because we want pretty UI.
+- react-bootstrap-more powerful to help us using bootstrap in react
 
--challenger
+- Challenger
 plan to use okta – Allows us to store and authenticate users without having to create our own backend for it.
                  -material UI
 
