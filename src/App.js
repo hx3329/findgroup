@@ -8,6 +8,7 @@ import HomePage from './components/pages/HomePage';
 import AboutPage from './components/pages/AboutPage';
 import ContactPage from './components/pages/ContactPage';
 import LoginPage from './components/auth/LoginPage';
+import Myprofile from "./components/pages/Myprofile";
 
 
 function onAuthRequired({ history}) {
@@ -46,6 +47,7 @@ class App extends Component {
                                <Route path='/implicit/callback' component={ImplicitCallback}/>
                                <Route path="/about" component={AboutPage}/>
                                <SecureRoute path="/contact" component={ContactPage}/>
+                               <SecureRoute path="/myprofile" component={Myprofile}/>
                            </Switch>
                        </div>
                    </div>
