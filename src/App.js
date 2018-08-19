@@ -9,6 +9,7 @@ import AboutPage from './components/pages/AboutPage';
 import ContactPage from './components/pages/ContactPage';
 import LoginPage from './components/auth/LoginPage';
 import Myprofile from "./components/pages/Myprofile";
+import Group from "./components/group/Group";
 
 
 function onAuthRequired({ history}) {
@@ -37,7 +38,7 @@ class App extends Component {
                      <div className="layout">
                          {/*add common in app*/}
                          <Layout />
-                         <h1>Users</h1>
+                         <h1>Users test server</h1>
                          <ul>
                              {this.state.users.map(user=>
                                  <li key={user.id}>{user.username}</li>
@@ -59,6 +60,7 @@ class App extends Component {
                                <Route path='/implicit/callback' component={ImplicitCallback}/>
                                <Route path="/about" component={AboutPage}/>
                                <SecureRoute path="/contact" component={ContactPage}/>
+                               <SecureRoute path="/group" component={Group}/>
                                <SecureRoute path="/myprofile" component={Myprofile}/>
                            </Switch>
                        </div>

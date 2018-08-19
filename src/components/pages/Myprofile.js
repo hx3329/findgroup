@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 class Myprofile extends Component {
     //account attribute
     state = {

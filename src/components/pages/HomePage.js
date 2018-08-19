@@ -38,7 +38,7 @@ export default withAuth(class Home extends Component {
             </div>
             ):(
             <div>
-                <p className="lead">Login at first <Link to="/contact">click here</Link> or use buttonc</p>
+                <p className="lead">Login at first <Link to="/group">click here</Link> to build your group tasl</p>
                 <button className="btn btn-light btn-lg" onClick={this.login}>Login</button>
             </div>
             );
