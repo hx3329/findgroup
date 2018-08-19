@@ -16,7 +16,13 @@ function onAuthRequired({ history}) {
 }
 
 class App extends Component {
-
+    //build server example
+    state={users:[]}
+    componentDidMount(){
+        fetch('/users')
+            .then(res => res.json())
+            .then(users => this.setState({users}));
+    }
     render(){
         return (
            // use the router to identify the url
@@ -31,6 +37,12 @@ class App extends Component {
                      <div className="layout">
                          {/*add common in app*/}
                          <Layout />
+                         <h1>Users</h1>
+                         <ul>
+                             {this.state.users.map(user=>
+                                 <li key={user.id}>{user.username}</li>
+                             )}
+                         </ul>
                      </div>
                        <div className="container">
                            <Switch>

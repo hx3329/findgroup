@@ -1,5 +1,3 @@
-// src/Home.js
-
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '@okta/okta-react';
@@ -40,7 +38,7 @@ export default withAuth(class Home extends Component {
             </div>
             ):(
             <div>
-                <p className="lead">Login at first<Link to="/contact">click here</Link></p>
+                <p className="lead">Login at first <Link to="/contact">click here</Link> or use buttonc</p>
                 <button className="btn btn-light btn-lg" onClick={this.login}>Login</button>
             </div>
             );
