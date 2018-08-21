@@ -11,6 +11,7 @@ class Myprofile extends Component {
     componentDidMount() {
         //localstorage.getItem can work as string jason object,it is string, so we need
         // javascript function to adjusting Jason object then we can use
+        //
         const idtoken = JSON.parse(localStorage.getItem('okta-token-storage'));
         this.setState({
             //use setState to update value use our variable of Username with idtoken to related key in
